@@ -26,6 +26,8 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
+autocmd VimEnter * colorscheme gotham
+
 " Plugins will be downloaded under the specified directory.
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Statusline and icons 
@@ -39,6 +41,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
  Plug 'neovim/nvim-lspconfig'
 " Autocompletion tool, hover windows, and more
  Plug 'nvim-lua/completion-nvim'
+ Plug 'whatyouhide/vim-gotham'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
