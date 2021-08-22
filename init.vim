@@ -26,9 +26,18 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
+" the below commands are executed upon entering nvim for all 
+" filetypes
+
 " using colorscheme gotham fails unless it's fed to autocmd
 autocmd VimEnter * colorscheme gotham
 
+" set transparency effects for the editor
+autocmd VimEnter * highlight Normal ctermbg=NONE
+autocmd VimEnter * highlight NonText ctermbg=NONE
+
+
+" vim-plug code below 
 " Plugins will be downloaded under the specified directory.
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Statusline and icons 
