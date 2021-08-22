@@ -64,4 +64,15 @@ require('indent_blankline').setup {
 	buftyper_exclue = {"terminal"},
 }
 require'lspconfig'.pyright.setup{on_attach=require'completion'.on_attach}
+require'lspconfig'.ccls.setup {
+  init_options = {
+    compilationDatabaseDirectory = "build";
+    index = {
+      threads = 0;
+    };
+    clang = {
+      excludeArgs = { "-frounding-math"} ;
+    };
+  }
+}
 EOF
