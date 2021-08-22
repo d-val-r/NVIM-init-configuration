@@ -1,12 +1,30 @@
+" line number
 set number
+
+" show print margin
 set colorcolumn=80
+
+" indentation
 set autoindent
 set smartindent
+
+" highlight as you search
 set incsearch
+
+" show list mode and set whitespace chars
 set list
 set listchars=tab:--,trail:·,eol:¬,nbsp:_
 let g:indent_blankline_space_char='-'
 
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
 
 " Plugins will be downloaded under the specified directory.
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
@@ -19,6 +37,8 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
  Plug 'lukas-reineke/indent-blankline.nvim'
 " Common configuration for Neovim's built-int LSP protocol
  Plug 'neovim/nvim-lspconfig'
+" Autocompletion tool, hover windows, and more
+ Plug 'nvim-lua/completion-nvim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -43,4 +63,5 @@ require('indent_blankline').setup {
 	char = "|",
 	buftyper_exclue = {"terminal"},
 }
+require'lspconfig'.pyright.setup{on_attach=require'completion'.on_attach}
 EOF
