@@ -78,7 +78,7 @@ require('indent_blankline').setup {
 	buftyper_exclue = {"terminal"},
 }
 require'lspconfig'.pyright.setup{on_attach=require'completion'.on_attach}
-require'lspconfig'.ccls.setup {
+require'lspconfig'.ccls.setup {on_attach=require'completion'.on_attach,
   init_options = {
     compilationDatabaseDirectory = "build";
     index = {
