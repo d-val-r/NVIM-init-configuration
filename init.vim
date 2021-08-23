@@ -26,7 +26,7 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
-
+" keybindings that autoclose opening quotes, braces, etc.
 inoremap \" \"\"<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
