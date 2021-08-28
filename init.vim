@@ -40,7 +40,7 @@ inoremap {;<CR> {<CR>};<ESC>O
 " filetypes
 
 " using colorscheme gotham fails unless it's fed to autocmd
-autocmd VimEnter * colorscheme gotham
+autocmd VimEnter * colorscheme iceberg
 
 " set transparency effects for the editor
 autocmd VimEnter * highlight Normal ctermbg=NONE
@@ -62,7 +62,8 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Autocompletion tool, hover windows, and more
  Plug 'nvim-lua/completion-nvim'
 " Themes
- Plug 'whatyouhide/vim-gotham'
+" Plug 'whatyouhide/vim-gotham'
+ Plug 'cocopon/iceberg.vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
